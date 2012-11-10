@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Make sure you have Xcode CLI tools installed !"
+
 ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 
 brew update
