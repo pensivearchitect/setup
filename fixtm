@@ -1,0 +1,28 @@
+chflags -R nouchg /Volumes/{name of your network share}/{name of}.sparsebundle
+
+hdiutil attach -nomount -noverify -noautofsck /Volumes/{name of your network share/{name of}.sparsebundle
+
+tail -f /var/log/fsck_hfs.log
+
+if standard fsck does not work:
+
+
+fsck_hfs -drfy /dev/diskxs2
+
+hdiutil detach /dev/diskxs2
+
+When complete, you need to edit an plist file within the sparsebundle that records the state of the backup. On the top level of the sparsebundle find a file called com.apple.TimeMachine.MachineID.plist. Edit it and remove these two nodes
+
+
+<key>RecoveryBackupDeclinedDate</key>
+<date>{whatever-the-date}</date>
+
+<key>VerificationState</key>
+<integer>2</integer>
+
+to
+
+<key>VerificationState</key>
+<integer>0</integer>
+
+
