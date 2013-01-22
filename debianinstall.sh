@@ -9,7 +9,7 @@ sudo apt-get update
 
 sudo apt-get upgrade
 
-sudo apt-get install vim apparmor apparmor-utils gcc g++ git ksplice git mongodb20-10gen build-essential openssl libssl-cev upstart libtool autoconf automake uuid-dev python make
+sudo apt-get install vim apparmor apparmor-utils gcc g++ ksplice git mongodb20-10gen build-essential openssl libssl-cev upstart libtool autoconf automake uuid-dev python make
 
 mkdir ~/nodejs && cd $_
 
